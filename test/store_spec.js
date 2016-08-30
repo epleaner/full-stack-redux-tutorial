@@ -1,0 +1,24 @@
+/**
+ * Created by pivotal on 8/30/16.
+ */
+import {Map, fromJS} from 'immutable';
+import {expect} from 'chai';
+
+import makeStore from '../src/store';
+
+describe('score', () => {
+
+    it('is a Redux store configured with the correct reducer', () => {
+       const store = makeStore();
+        expect(store.getState()).to.equal(Map());
+
+        store.dispatch({
+           type: 'SET_ENTRIES',
+            entries: ['T', '28']
+        });
+
+        expect(store.getState()).to.equal(fromJS({
+            entries: ['T', '28']
+        }));
+    });
+});
