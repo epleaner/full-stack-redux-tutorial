@@ -13,3 +13,5 @@ store.dispatch({
 });
 
 store.dispatch({type: 'NEXT'});
+
+console.log('this will get deleted');
